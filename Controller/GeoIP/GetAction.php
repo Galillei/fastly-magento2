@@ -95,7 +95,6 @@ class GetAction extends \Magento\Framework\App\Action\Action
         StoreManagerInterface $storeManager,
         LayoutFactory $resultLayoutFactory,
         LocaleResolverInterface $localeResolver,
-        UrlInterface $url,
         LoggerInterface $logger
     ) {
         parent::__construct($context);
@@ -104,7 +103,7 @@ class GetAction extends \Magento\Framework\App\Action\Action
         $this->storeManager = $storeManager;
         $this->resultLayoutFactory = $resultLayoutFactory;
         $this->localeResolver = $localeResolver;
-        $this->url = $url;
+        $this->url = $context->getUrl();
         $this->logger = $logger;
     }
 
