@@ -57,7 +57,7 @@ class FlushAllCacheObserver implements ObserverInterface
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        if ($this->config->getType() == Config::FASTLY && $this->config->isEnabled()) {
+        if ($this->config->isEnabled() && $this->config->getType() == Config::FASTLY ) {
             $this->purgeCache->sendPurgeRequest();
         }
 
